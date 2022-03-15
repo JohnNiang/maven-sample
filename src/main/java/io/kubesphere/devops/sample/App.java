@@ -12,14 +12,14 @@ import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
 /**
- * Hello world!
+ * Hello world APP.
  */
 public class App {
 
     private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 
     public static void main(String[] args) throws IOException {
-        final HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 6666), 0);
+        final HttpServer server = HttpServer.create(new InetSocketAddress("0.0.0.0", 6666), 0);
         server.setExecutor(Executors.newFixedThreadPool(10));
         server.createContext("/greeting", new HttpHandler() {
             @Override
